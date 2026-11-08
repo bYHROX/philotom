@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Philotom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1>Philotom</h1>
+    <p class="sub">Une phrase de philosophie, dite par le professeur.</p>
+  </header>
+
+  <section class="stage" id="stage">
+    <div class="bubble-zone">
+      <div class="bubble" id="bubble">
+        <p id="text">Bonjour. J’ai une phrase pour toi.</p>
+        <p id="author"></p>
+      </div>
+    </div>
+
+    <svg class="scene" viewBox="0 0 800 400" role="img" aria-label="Un professeur de philosophie assis à son bureau">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#7fa6c9"/>
+          <stop offset="1" stop-color="#f3c98b"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Mur bas -->
+      <rect x="0" y="235" width="800" height="165" fill="#1d3640"/>
+
+      <!-- Fenêtre -->
+      <rect x="40" y="20" width="160" height="170" fill="url(#sky)"/>
+      <g stroke="#e9e1d0" stroke-width="7" fill="none">
+        <rect x="40" y="20" width="160" height="170"/>
+        <line x1="120" y1="20" x2="120" y2="190"/>
+        <line x1="40" y1="105" x2="200" y2="105"/>
+      </g>
+      <rect x="30" y="190" width="180" height="8" fill="#e9e1d0"/>
+
+      <!-- Bibliothèque -->
+      <rect x="585" y="15" width="190" height="245" fill="#2e2118"/>
+      <g id="books"></g>
+      <g fill="#7a4f30">
+        <rect x="585" y="92" width="190" height="6"/>
+        <rect x="585" y="172" width="190" height="6"/>
+        <rect x="585" y="252" width="190" height="8"/>
+      </g>
+
+      <!-- Lumière de la lampe -->
+      <polygon points="92,228 148,228 200,290 40,290" fill="rgba(242,193,78,.16)"/>
+
+      <!-- Corps -->
+      <rect x="300" y="185" width="200" height="130" rx="55" fill="#5b4636"/>
+      <polygon points="368,188 400,228 432,188" fill="#f1efe8"/>
+      <g fill="#b9413a">
+        <polygon points="400,208 380,198 380,218"/>
+        <polygon points="400,208 420,198 420,218"/>
+        <circle cx="400" cy="208" r="4.5"/>
+      </g>
+      <rect x="388" y="168" width="24" height="26" fill="#d9a583"/>
+
+      <!-- Tête (groupe animé) -->
+      <g id="head">
+        <ellipse cx="352" cy="108" rx="14" ry="26" fill="#ece9e2"/>
+        <ellipse cx="448" cy="108" rx="14" ry="26" fill="#ece9e2"/>
+        <circle cx="351" cy="126" r="9" fill="#e0aa88"/>
+        <circle cx="449" cy="126" r="9" fill="#e0aa88"/>
+        <ellipse cx="400" cy="120" rx="50" ry="58" fill="#e9bb98"/>
+        <g stroke="#ece9e2" stroke-width="6" stroke-linecap="round" fill="none">
+          <path d="M366 100 Q380 93 392 99"/>
+          <path d="M408 99 Q420 93 434 100"/>
+        </g>
+        <g id="eyes" fill="#222">
+          <circle cx="380" cy="117" r="3.2"/>
+          <circle cx="420" cy="117" r="3.2"/>
+        </g>
+        <g stroke="#2b2b2b" stroke-width="3" fill="rgba(255,255,255,.12)">
+          <circle cx="380" cy="116" r="15"/>
+          <circle cx="420" cy="116" r="15"/>
+        </g>
+        <g stroke="#2b2b2b" stroke-width="3" fill="none">
+          <path d="M395 114 Q400 110 405 114"/>
+          <path d="M365 114 L352 118"/>
+          <path d="M435 114 L448 118"/>
+        </g>
+        <ellipse cx="400" cy="140" rx="7" ry="6" fill="#d89c78"/>
+        <ellipse id="mouth" cx="400" cy="158" rx="13" ry="9" fill="#6b2020"/>
+        <path d="M374 152 Q387 143 400 152 Q413 143 426 152 Q413 161 400 155 Q387 161 374 152 Z" fill="#ece9e2"/>
+      </g>
+
+      <!-- Bureau -->
+      <rect x="0" y="285" width="800" height="115" fill="#9a6a43"/>
+      <rect x="0" y="285" width="800" height="10" fill="#b98355"/>
+      <rect x="300" y="322" width="200" height="60" rx="4" fill="none" stroke="#7a4f30" stroke-width="4"/>
+      <ellipse cx="322" cy="296" rx="22" ry="9" fill="#e9bb98"/>
+      <ellipse cx="478" cy="296" rx="22" ry="9" fill="#e9bb98"/>
+      <rect x="345" y="300" width="110" height="22" rx="3" fill="#d9b25a"/>
+      <text x="400" y="315" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="13" fill="#3a2a14">Pr Philotom</text>
+
+      <!-- Objets du bureau -->
+      <rect x="565" y="265" width="95" height="20" fill="#3f6f8a"/>
+      <rect x="573" y="247" width="78" height="18" fill="#c56b3a"/>
+      <rect x="690" y="262" width="26" height="23" rx="3" fill="#e8e2d4"/>
+      <path d="M716 268 Q730 272 716 280" stroke="#e8e2d4" stroke-width="4" fill="none"/>
+      <ellipse cx="130" cy="287" rx="32" ry="6" fill="#2b2b2b"/>
+      <line x1="130" y1="287" x2="120" y2="224" stroke="#2b2b2b" stroke-width="5"/>
+      <path d="M105 196 L135 196 L152 226 L88 226 Z" fill="#2f7a5a"/>
+    </svg>
+  </section>
+
+  <section class="controls" aria-label="Commandes">
+    <p id="meta" class="meta"></p>
+    <div class="row">
+      <button class="btn" id="prev" type="button">Phrase précédente</button>
+      <button class="btn primary" id="play" type="button">Écouter le prof</button>
+      <button class="btn" id="next" type="button">Phrase suivante</button>
+    </div>
+
+    <aside id="note" class="note" hidden><p id="noteText"></p></aside>
+  </section>
+
+  <div id="live" class="sr" role="status" aria-live="polite"></div>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+const stage = $('#stage'), bubble = $('#bubble'), textEl = $('#text'),
+      authorEl = $('#author'), noteEl = $('#note'), noteText = $('#noteText'),
+      mouth = $('#mouth'), meta = $('#meta'), live = $('#live');
+
+const FALLBACK = [
+  { date: '', text: 'Connais-toi toi-même.', author: 'Socrate', note: '' },
+  { date: '', text: 'Je pense, donc je suis.', author: 'Descartes', note: '' }
+];
+
+let phrases = [], index = 0, run = 0;
+
+/* Ouverture de la bouche selon la lettre prononcée */
+const OPEN = { a: 1, o: .95, u: .6, e: .6, i: .4, y: .4 };
+function mouthFor(ch) {
+  const c = ch.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  if (OPEN[c] !== undefined) return OPEN[c];
+  return /[a-z]/.test(c) ? .28 : .06;
+}
+function delayFor(ch) {
+  if (/[,;:]/.test(ch)) return 220;
+  if (/[.!?…]/.test(ch)) return 340;
+  return ch === ' ' ? 55 : 48;
+}
+
+/* Livres de la bibliothèque */
+function buildBooks() {
+  const g = $('#books'), NS = 'http://www.w3.org/2000/svg';
+  const colors = ['#c56b3a', '#3f6f8a', '#d9b25a', '#7a3b4a', '#4d7a5a', '#e8e2d4'];
+  const widths = [14, 18, 12, 20, 16, 13, 19, 15], heights = [40, 48, 34, 52, 44];
+  [92, 172, 252].forEach((base, r) => {
+    let x = 594, i = r * 3;
+    for (;;) {
+      const w = widths[i % widths.length], h = heights[(i * 2 + r) % heights.length];
+      if (x + w > 768) break;
+      const el = document.createElementNS(NS, 'rect');
+      el.setAttribute('x', x); el.setAttribute('y', base - h);
+      el.setAttribute('width', w); el.setAttribute('height', h);
+      el.setAttribute('fill', colors[(i + r) % colors.length]);
+      g.appendChild(el);
+      x += w + 2; i++;
+    }
+  });
+}
+
+/* Chargement des phrases : seules celles datées d’aujourd’hui ou avant sont visibles */
+async function load() {
+  let data;
+  try {
+    const res = await fetch('phrases.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error(res.status);
+    data = await res.json();
+  } catch (err) {
+    console.warn('phrases.json non lu (ouvre le site via un serveur local). Phrases de secours utilisées.', err);
+    data = FALLBACK;
+  }
+  const today = new Date().toLocaleDateString('sv-SE');
+  const sorted = data.slice().sort((a, b) => (a.date || '').localeCompare(b.date || ''));
+  const available = sorted.filter(p => !p.date || p.date <= today);
+  phrases = available.length ? available : sorted;
+  index = phrases.length - 1;
+}
+
+function showMeta() {
+  const p = phrases[index];
+  let s = `Phrase ${index + 1} sur ${phrases.length}`;
+  if (p.date) {
+    s += ', du ' + new Date(p.date + 'T12:00:00')
+      .toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+  meta.textContent = s;
+}
+
+function reset() {
+  run++;
+  bubble.classList.remove('show');
+  authorEl.classList.remove('on');
+  noteEl.hidden = true;
+  stage.classList.remove('speaking');
+  mouth.style.transform = '';
+}
+
+/* Le prof parle : le texte s’écrit lettre par lettre, la bouche suit */
+async function speak(item) {
+  reset();
+  const id = run;
+  const chars = Array.from(item.text);
+  textEl.innerHTML = '<span id="done"></span><span id="rest" class="rest"></span>';
+  const done = $('#done'), rest = $('#rest');
+  rest.textContent = item.text;
+  authorEl.textContent = item.author ? '— ' + item.author : '';
+  live.textContent = item.text + (item.author ? ', ' + item.author : '');
+
+  await sleep(60);
+  if (id !== run) return;
+  bubble.classList.add('show');
+  stage.classList.add('speaking');
+  await sleep(380);
+
+  for (let i = 0; i < chars.length; i++) {
+    if (id !== run) return;
+    done.textContent = chars.slice(0, i + 1).join('');
+    rest.textContent = chars.slice(i + 1).join('');
+    mouth.style.transform = `scaleY(${mouthFor(chars[i])})`;
+    await sleep(delayFor(chars[i]));
+  }
+  if (id !== run) return;
+
+  mouth.style.transform = '';
+  stage.classList.remove('speaking');
+  authorEl.classList.add('on');
+  if (item.note) { noteText.textContent = item.note; noteEl.hidden = false; }
+}
+
+function go(step) {
+  index = (index + step + phrases.length) % phrases.length;
+  showMeta();
+  speak(phrases[index]);
+}
+
+$('#play').addEventListener('click', () => speak(phrases[index]));
+$('#prev').addEventListener('click', () => go(-1));
+$('#next').addEventListener('click', () => go(1));
+
+(async function init() {
+  buildBooks();
+  await load();
+  showMeta();
+  bubble.classList.add('show');
+})();
+</script>
+</body>
+</html>
